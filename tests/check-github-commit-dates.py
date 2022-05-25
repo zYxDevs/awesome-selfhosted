@@ -20,6 +20,7 @@ Usage:
 
 """
 
+
 from github import Github
 import sys
 import time
@@ -57,4 +58,4 @@ g = Github(access_token)
 for url in urls:
     project = re.sub('https://github.com/', '', url)
     repo = g.get_repo(project)
-    print(str(repo.pushed_at) + ' https://github.com/' + project)
+    print(f'{str(repo.pushed_at)} https://github.com/{project}')
